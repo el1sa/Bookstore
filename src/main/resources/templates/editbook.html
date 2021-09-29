@@ -9,11 +9,24 @@
 <div>
  <form th:object="${book}" th:action="@{../save}" action="#" method="post">
 <input type="hidden" th:field="*{id}" class="form-control"/>
-<input type="text" th:field="*{title}" />
-<input type="text" th:field="*{author}" />
-<input type="text" th:field="*{year}" />
-<input type="text" th:field="*{isbn}" />
-<input type="text" th:field="*{price}" />
+<label for="title">Title</label><br>
+<input type="text" th:field="*{title}" /><br><br> 
+<label for="author">Author</label><br>
+<input type="text" th:field="*{author}" /><br><br> 
+<label for="year">Year</label><br>
+<input type="text" th:field="*{year}" /><br><br> 
+<label for="isbn">ISBN</label><br>
+<input type="text" th:field="*{isbn}" /><br><br> 
+<label for="price">Price</label><br>
+<input type="text" th:field="*{price}" /><br><br> 
+
+<div style="clear: both; display: block; height: 10px;"></div>						
+		  	<label for="catlist">Category</label>
+			 <select id="catlist" th:field="*{category}" class="form-control">
+       			<option th:each="category: ${categories}" th:value="${category.categoryid}" th:text="${category.name}"></option>
+    		</select>
+			
+			<div style="clear: both; display: block; height: 10px;"></div>
 <input type="submit" class="btn btn-success" value="Save"></input>
 </form>
 
