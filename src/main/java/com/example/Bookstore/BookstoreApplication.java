@@ -10,6 +10,8 @@ import com.example.bookstore.domain.Book;
 import com.example.bookstore.domain.BookRepository;
 import com.example.bookstore.domain.Category;
 import com.example.bookstore.domain.CategoryRepository;
+import com.example.bookstore.domain.UserRepository;
+import com.example.bookstore.domain.User;
 
 @SpringBootApplication
 public class BookstoreApplication {
@@ -19,6 +21,10 @@ public class BookstoreApplication {
 	
 	@Autowired
 	private CategoryRepository crepository;
+	
+	@Autowired
+	private UserRepository urepository;
+	
 
 	public static void main(String[] args) {
 		SpringApplication.run(BookstoreApplication.class, args);
@@ -42,6 +48,13 @@ public class BookstoreApplication {
 			repository.save(b1);
 			repository.save(b2);
 			repository.save(b3);
+			
+			User user1 = new User("user", "$2a$10$MrNwbwr85OVP3DEOANer9eztRqyXbOeRxIfj3d8dS54BGL2JRpC02",
+					"user1@gmail.com","USER");
+			User user2 = new User("admin", "$2a$10$9rBf94.G6fktrltFZwwOAOTlaG4qDLeV4exnF7TX7Ehr4AvFUZixy",
+					"user2@gmail.com", "ADMIN");
+			urepository.save(user1);
+			urepository.save(user2);
 
 		};
 
