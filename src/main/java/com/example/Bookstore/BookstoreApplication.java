@@ -53,6 +53,7 @@ public class BookstoreApplication {
 					"user1@gmail.com","USER");
 			User user2 = new User("admin", "$2a$10$9rBf94.G6fktrltFZwwOAOTlaG4qDLeV4exnF7TX7Ehr4AvFUZixy",
 					"user2@gmail.com", "ADMIN");
+			
 			urepository.save(user1);
 			urepository.save(user2);
 
